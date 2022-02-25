@@ -90,7 +90,7 @@ M.misc = function()
       map("n", maps.misc.new_tab, ":tabnew <CR>") -- new tabs
       map("n", maps.misc.line_number_toggle, ":set nu! <CR>") -- toggle numbers
       map("n", maps.misc.relative_line_number_toggle, ":set rnu! <CR>") -- toggle relative numbers
-      map("n", maps.misc.save_file, ":w <CR>") -- ctrl + s to save file
+      map("n", maps.misc.save_file, ":w! <CR>") -- ctrl + s to save file
 
       -- terminal mappings --
       local term_maps = maps.terminal

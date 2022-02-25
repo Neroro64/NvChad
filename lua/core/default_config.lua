@@ -13,7 +13,6 @@ M.options = {
    ignorecase = true,
    smartcase = true,
    mapleader = " ",
-   mouse = "a",
    number = true,
    numberwidth = 2,
    relativenumber = false,

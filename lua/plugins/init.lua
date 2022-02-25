@@ -197,6 +197,44 @@ local plugins = {
          require("core.mappings").telescope()
       end,
    },
+   -- My custom plugins
+   {
+     "easymotion/vim-easymotion",
+     event = "BufRead",
+    
+   },
+   {
+     "mbbill/undotree",
+     after = "vim-easymotion",
+   },
+   {
+     "junegunn/vim-easy-align",
+     after = "vim-easymotion",
+   },
+   {
+     "tpope/vim-surround",
+     after = "vim-easymotion",
+      -- cs"'  ->  change " to '
+      -- ds"   ->  remove "
+      -- ysiw( ->  wrap word with ()
+      -- yss(  ->  wrap line with ()
+   },
+   {
+     "preservim/tagbar",
+     after = "vim-easymotion",
+   },
+   {
+     "sainnhe/gruvbox-material",
+   },
+   -- {
+   --   "mbbill/undotree",
+   --   after = "vim-easymotion",
+   -- },
+   -- {
+   --   "mbbill/undotree",
+   --   after = "vim-easymotion",
+   -- },
+
 }
 
 --label plugins for operational assistance
