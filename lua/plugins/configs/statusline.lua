@@ -11,14 +11,14 @@ local default = {
 }
 
 default.icon_styles = {
-   default = {
+   default2 = {
       left = "",
       right = " ",
       main_icon = "  ",
       vi_mode_icon = " ",
       position_icon = " ",
    },
-   arrow = {
+   default = {
       left = "",
       right = "",
       main_icon = "  ",
