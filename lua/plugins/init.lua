@@ -234,15 +234,17 @@ local plugins = {
    {
      "sainnhe/gruvbox-material",
    },
-   -- {
-   --   "mbbill/undotree",
-   --   after = "vim-easymotion",
-   -- },
-   -- {
-   --   "mbbill/undotree",
-   --   after = "vim-easymotion",
-   -- },
-
+   {
+     "nvim-orgmode/orgmode",
+     after = "vim-easymotion",
+     config = function()
+       require("plugins.configs.orgmode")
+     end,
+   },
+	{
+		"luukvbaal/stabilize.nvim",
+		config = function() require("stabilize").setup() end
+	}
 }
 
 --label plugins for operational assistance

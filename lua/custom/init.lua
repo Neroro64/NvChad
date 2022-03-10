@@ -50,6 +50,9 @@ map('n', "<leader>pr", ":!p4 revert %:p <cr>")
 
 -- map('n', "<F9>", ":TagbarToggle<CR>")
 
+-- Undotree
+map('n', "<Leader>U", ":UndotreeToggle<CR>")
+
 vim.cmd([[
   " Toggle between this and the last accessed tab
   let g:lasttab = 1
