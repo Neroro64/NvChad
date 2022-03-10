@@ -47,7 +47,8 @@ map('n', "<leader>pc", ":!p4 edit %:p -c ")
 map('n', "<leader>pr", ":!p4 revert %:p <cr>")
 
 -- Tag bar
-map('n', "<F9>", ":TagbarToggle<CR>")
+
+-- map('n', "<F9>", ":TagbarToggle<CR>")
 
 vim.cmd([[
   " Toggle between this and the last accessed tab
@@ -93,6 +94,5 @@ vim.cmd([[
 
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
-
 ]])
 

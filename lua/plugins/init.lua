@@ -221,7 +221,15 @@ local plugins = {
    },
    {
      "preservim/tagbar",
+     disable = true,
      after = "vim-easymotion",
+   },
+   {
+     'simrat39/symbols-outline.nvim',
+     after = "vim-easymotion",
+     setup = function()
+       require("custom.plugins.symboloutline")
+     end,
    },
    {
      "sainnhe/gruvbox-material",
