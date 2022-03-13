@@ -4,7 +4,7 @@ local g = vim.g
 local options = require("core.utils").load_config().options
 
 opt.title = true
-opt.clipboard = options.clipboard
+-- opt.clipboard = options.clipboard
 opt.cmdheight = options.cmdheight
 opt.cul = true -- cursor line
 
@@ -19,7 +19,7 @@ opt.fillchars = options.fillchars
 opt.hidden = options.hidden
 opt.ignorecase = options.ignorecase
 opt.smartcase = options.smartcase
-opt.mouse = options.mouse
+-- opt.mouse = options.mouse
 
 -- Numbers
 opt.number = options.number

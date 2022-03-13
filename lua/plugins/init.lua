@@ -220,11 +220,8 @@ local plugins = {
       -- yss(  ->  wrap line with ()
    },
    {
-     "preservim/tagbar",
-     after = "vim-easymotion",
-   },
-   {
-     "sainnhe/gruvbox-material",
+	   'liuchengxu/vista.vim',
+	   after ="vim-easymotion",
    },
    {
      "nvim-orgmode/orgmode",
