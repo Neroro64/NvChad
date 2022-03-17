@@ -25,6 +25,7 @@ map('n', '<Leader>6', '6gt')
 map('n', '<Leader>7', '7gt')
 map('n', '<Leader>8', '8gt')
 map('n', '<Leader>8', '8gt')
+map('n', '<Leader>q', ':q<CR>')
 
 -- Remap VIM 0 to first non-blank character, aka. press '0' to jump to the first character of current line
 map('n', "0", '^')
