@@ -32,9 +32,9 @@ local bg = require("core.utils").bg
 
 -- Comments
 if ui.italic_comments then
-   fg("Comment", grey_fg .. " gui=italic")
+   fg("Comment", orange .. " gui=italic")
 else
-   fg("Comment", grey_fg)
+   fg("Comment", orange)
 end
 
 -- Disable cursor line
@@ -72,7 +72,7 @@ if ui.transparency then
    bg("Normal", "NONE")
    bg("Folded", "NONE")
    fg("Folded", "NONE")
-   fg("Comment", grey)
+   fg("Comment", orange)
 end
 
 -- [[ Plugin Highlights
