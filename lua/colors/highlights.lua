@@ -4,6 +4,7 @@ local override = require("core.utils").load_config().ui.hl_override
 local colors = require("colors").get()
 local ui = require("core.utils").load_config().ui
 
+
 local black = colors.black
 local black2 = colors.black2
 local blue = colors.blue
@@ -32,9 +33,9 @@ local bg = require("core.utils").bg
 
 -- Comments
 if ui.italic_comments then
-   fg("Comment", orange .. " gui=italic")
+   fg("Comment", light_grey .. " gui=italic")
 else
-   fg("Comment", orange)
+   fg("Comment", light_grey)
 end
 
 -- Disable cursor line
@@ -72,7 +73,7 @@ if ui.transparency then
    bg("Normal", "NONE")
    bg("Folded", "NONE")
    fg("Folded", "NONE")
-   fg("Comment", orange)
+   fg("Comment", light_grey)
 end
 
 -- [[ Plugin Highlights

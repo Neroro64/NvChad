@@ -187,51 +187,6 @@ local plugins = {
 			require("core.mappings").nvimtree()
 		end,
 	},
-
-<<<<<<< HEAD
-   {
-      "nvim-telescope/telescope.nvim",
-      module = "telescope",
-      cmd = "Telescope",
-      config = override_req("telescope", "plugins.configs.telescope", "setup"),
-      setup = function()
-         require("core.mappings").telescope()
-      end,
-   },
-   -- My custom plugins
-   {
-     "easymotion/vim-easymotion",
-     event = "BufRead",
-    
-   },
-   {
-     "mbbill/undotree",
-     after = "vim-easymotion",
-   },
-   {
-     "junegunn/vim-easy-align",
-     after = "vim-easymotion",
-   },
-   {
-     "tpope/vim-surround",
-     after = "vim-easymotion",
-      -- cs"'  ->  change " to '
-      -- ds"   ->  remove "
-      -- ysiw( ->  wrap word with ()
-      -- yss(  ->  wrap line with ()
-   },
-   {
-	   'liuchengxu/vista.vim',
-	   after ="vim-easymotion",
-   },
-   {
-     "nvim-orgmode/orgmode",
-     after = "vim-easymotion",
-     config = function()
-       require("plugins.configs.orgmode")
-     end,
-   },
-=======
 	{
 		"nvim-telescope/telescope.nvim",
 		module = "telescope",
@@ -263,13 +218,13 @@ local plugins = {
 		-- ysiw( ->  wrap word with ()
 		-- yss(  ->  wrap line with ()
 	},
-	{
-		"preservim/tagbar",
-		after = "vim-easymotion",
-	},
-	{
-		"sainnhe/gruvbox-material",
-	},
+	-- {
+	-- 	"preservim/tagbar",
+	-- 	after = "vim-easymotion",
+	-- },
+	-- {
+	-- 	"sainnhe/gruvbox-material",
+	-- },
 	{
 		"nvim-orgmode/orgmode",
 		after = "vim-easymotion",
@@ -277,10 +232,17 @@ local plugins = {
 			require("plugins.configs.orgmode")
 		end,
 	},
->>>>>>> ce1b0dd6918537f474c503fd07a1e5cb615b0b84
 	{
 		"luukvbaal/stabilize.nvim",
 		config = function() require("stabilize").setup() end
+	},
+	{
+		"ctrlpvim/ctrlp.vim",
+		after = "vim-easymotion",
+	},
+	{
+		"liuchengxu/vista.vim",
+		after = "vim-easymotion",
 	},
 }
 

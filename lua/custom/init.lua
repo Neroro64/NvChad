@@ -98,5 +98,18 @@ vim.cmd([[
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
 
+	" CtrlP config
+	let g:ctrlp_map = '<leader>pp'
+	let g:ctrlp_user_command = "fd --type f"
+	let g:ctrlp_max_height = 20
+	let g:ctrlp_use_caching = 1
+	let g:ctrlp_clear_cache_on_exit = 0
+	let g:ctrlp_types = ['fil', 'mru']
+	let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(idea|cache|vs)|([Bb]uild|[Bb]in)$',
+	\ 'file': '\v\.(exe|so|dll|obj|pdb|nfo)$'
+	\ }
+	nnoremap <silent> <leader>po :CtrlP %:p:h<cr>
+	nnoremap <silent> <leader>pu :CtrlPMRU<CR>
 ]])
 
