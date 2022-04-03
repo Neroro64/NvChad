@@ -54,11 +54,6 @@ map('n', "<F9>", ":Vista<CR>")
 map('n', "<Leader>U", ":UndotreeToggle<CR>")
 
 vim.cmd([[
-  " Toggle between this and the last accessed tab
-  let g:lasttab = 1
-  nmap <Leader><tab> :exe "tabn ".g:lasttab<CR>
-  au TabLeave * let g:lasttab = tabpagenr()
-
   " Remap diffnext and diffprev
   nnoremap <expr> <C-J> &diff ? ']c' : '<C-W>j'
   nnoremap <expr> <C-K> &diff ? '[c' : '<C-W>k'

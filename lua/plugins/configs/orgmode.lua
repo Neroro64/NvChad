@@ -11,7 +11,7 @@ parser_config.org = {
 }
 
 require('orgmode').setup({
-  org_agenda_files = {'~/dev/dice-log/Org/Laptop', '~/dev/dice-log/Org/**/*'},
-  org_default_notes_file = '~/dev/dice-log/Org/Laptop/refile.org',
+  org_agenda_files = {'E:/dev/dice-log/Org', 'E:/dev/orgs/**/*'},
+  org_default_notes_file = 'E:/dev/dice-log/Org/refile.org',
   org_todo_keywords = {'TODO', 'PENDING', '|', 'DONE'},
 })
