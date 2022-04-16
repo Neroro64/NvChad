@@ -2,11 +2,13 @@ local default = {
    ensure_installed = {
    "lua", "python", "cpp", "c",
    "vim", "c_sharp", "markdown", "html",
-   "json", "javascript"
+   "json", "org", 
    },
    highlight = {
       enable = true,
       use_languagetree = true,
+	  disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+	  additional_vim_regex_highlighting = {'org'}
    },
 }
 
