@@ -25,6 +25,7 @@ map('n', '<Leader>6', '6gt')
 map('n', '<Leader>7', '7gt')
 map('n', '<Leader>8', '8gt')
 map('n', '<Leader>8', '8gt')
+map('n', '<Leader>q', ':q<CR>')
 
 -- Remap VIM 0 to first non-blank character, aka. press '0' to jump to the first character of current line
 map('n', "0", '^')
@@ -47,18 +48,11 @@ map('n', "<leader>pc", ":!p4 edit %:p -c ")
 map('n', "<leader>pr", ":!p4 revert %:p <cr>")
 
 -- Tag bar
-
--- map('n', "<F9>", ":TagbarToggle<CR>")
-
+map('n', "<F9>", ":Vista<CR>")
 -- Undotree
 map('n', "<Leader>U", ":UndotreeToggle<CR>")
 
 vim.cmd([[
-  " Toggle between this and the last accessed tab
-  let g:lasttab = 1
-  nmap <Leader><tab> :exe "tabn ".g:lasttab<CR>
-  au TabLeave * let g:lasttab = tabpagenr()
-
   " Remap diffnext and diffprev
   nnoremap <expr> <C-J> &diff ? ']c' : '<C-W>j'
   nnoremap <expr> <C-K> &diff ? '[c' : '<C-W>k'
@@ -97,5 +91,19 @@ vim.cmd([[
 
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
+
+	" CtrlP config
+	let g:ctrlp_map = '<leader>pp'
+	let g:ctrlp_user_command = "fd --type f"
+	let g:ctrlp_max_height = 20
+	let g:ctrlp_use_caching = 1
+	let g:ctrlp_clear_cache_on_exit = 0
+	let g:ctrlp_types = ['fil', 'mru']
+	let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(idea|cache|vs)|([Bb]uild|[Bb]in)$',
+	\ 'file': '\v\.(exe|so|dll|obj|pdb|nfo)$'
+	\ }
+	nnoremap <silent> <leader>po :CtrlP %:p:h<cr>
+	nnoremap <silent> <leader>pu :CtrlPMRU<CR>
 ]])
 
