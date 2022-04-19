@@ -32,10 +32,12 @@ map('n', "0", '^')
 map('v', "0", '^')
 
 -- Move a line of text using ALT+[jk] or Command+[jk] on mac
-map('n', '<M-j>', "mz:m+<cr>`z")
-map('n', '<M-k>', "mz:m-2<cr>`z")
-map('v', '<M-j>', ":m'>+<cr>`<my`>mzgv`yo`z")
-map('v', '<M-k>', ":m'<-2<cr>`>my`<zgv()`yo`z")
+map('n', '<A-j>', ":m .+1<CR>==")
+map('n', '<A-k>', ":m .-2<CR>==")
+map('i', '<A-j>', "<Esc>:m .+1<CR>==gi")
+map('i', '<A-k>', "<Esc>:m .-2<CR>==gi")
+map('v', '<A-j>', ":m '>+1<CR>gv=gv")
+map('v', '<A-k>', ":m '<-2<CR>gv=gv")
 
 -- Remove the Windows ^M - when the encodings gets messed up
 map('n', '<Leader>dm', "mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm")

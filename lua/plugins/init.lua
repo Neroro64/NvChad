@@ -43,6 +43,7 @@ local plugins = {
 		"akinsho/bufferline.nvim",
 		disable = not plugin_settings.status.bufferline,
 		after = "nvim-web-devicons",
+		tag = "*",
 		config = override_req("bufferline", "plugins.configs.bufferline", "setup"),
 		setup = function()
 			require("core.mappings").bufferline()
@@ -242,6 +243,10 @@ local plugins = {
 	},
 	{
 		"liuchengxu/vista.vim",
+		after = "vim-easymotion",
+	},
+	{
+		"tpope/vim-fugitive",
 		after = "vim-easymotion",
 	},
 }
