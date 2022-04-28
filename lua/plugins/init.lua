@@ -249,6 +249,10 @@ local plugins = {
 		"tpope/vim-fugitive",
 		after = "vim-easymotion",
 	},
+	{
+		"williamboman/nvim-lsp-installer",
+		after = "nvim-lspconfig",
+	},
 }
 
 --label plugins for operational assistance
