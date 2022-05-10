@@ -13,5 +13,5 @@ require("orgmode").setup_ts_grammar()
 require('orgmode').setup({
   org_agenda_files = {'E:/dev/dice-log/Org/Home', 'E:/dev/dice-log/**/*'},
   org_default_notes_file = 'E:/dev/dice-log/Org/Home/refile.org',
-  org_todo_keywords = {'TODO', 'PENDING', '|', 'DONE'},
+  org_todo_keywords = {'TODO', '|', 'DONE'},
 })
