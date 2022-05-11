@@ -48,8 +48,8 @@ return {
         setup = function()
             require("core.mappings").bufferline()
             local map = nvchad.map
-            map("n", "<leader>i", "<cmd> :BufferPick <CR>")
-            map("n", "<leader>I", "<cmd> :BufferPickClose <CR>")
+            map("n", "<leader>i", "<cmd> :BufferLinePick <CR>")
+            map("n", "<leader>I", "<cmd> :BufferLinePickClose <CR>")
         end,
     },
     -- -- -- -- -- --

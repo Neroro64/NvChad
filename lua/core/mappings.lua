@@ -156,10 +156,6 @@ M.lspconfig = function()
       vim.diagnostic.goto_next()
    end)
 
-   map("n", "<leader>q", function()
-      vim.diagnostic.setloclist()
-   end)
-
    map("n", "<leader>fm", function()
       vim.lsp.buf.formatting()
    end)
