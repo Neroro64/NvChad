@@ -13,5 +13,5 @@ require("orgmode").setup_ts_grammar()
 require('orgmode').setup({
   org_agenda_files = {'D:/GitLab/DICE-Log/Org/Work', 'D:/GitLab/DICE-Log/Org/**/*'},
   org_default_notes_file = 'D:/GitLab/DICE-Log/Org/refile.org',
-  org_todo_keywords = {'TODO', 'PENDING', '|', 'DONE'},
+  org_todo_keywords = {'TODO', '|', 'DONE'},
 })
