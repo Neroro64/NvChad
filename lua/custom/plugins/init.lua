@@ -1,22 +1,24 @@
 return {
-      -- Overriding the default configs
-      ["nvim-telescope/telescope.nvim"] = {
+    -- Overriding the default configs
+    ["nvim-telescope/telescope.nvim"] = {
         setup = function()
-           -- load default mappings first
-           require("core.mappings").telescope()
-           local map = nvchad.map
-  
-           -- then load your mappings
-           map("n", "<leader>oi", "<cmd> :Telescope buffers <CR>")
-           map("n", "<leader>of", "<cmd> :Telescope find_files <CR>")
-           map("n", "<Nop>", "<cmd> :Telescope find_files follow=true no_ignore=true hidden=true <CR>")
-           map("n", "<leader>ogc", "<cmd> :Telescope git_commits <CR>")
-           map("n", "<leader>ogs", "<cmd> :Telescope git_status <CR>")
-           map("n", "<leader>oh", "<cmd> :Telescope help_tags <CR>")
-           map("n", "<leader>o/", "<cmd> :Telescope live_grep <CR>")
-           map("n", "<leader>ou", "<cmd> :Telescope oldfiles <CR>")
-           map("n", "<leader>oth", "<cmd> :Telescope themes <CR>")
-           map("n", "<leader>och", "<cmd> :Telescope keymaps <CR>")
+            -- load default mappings first
+            local map = nvchad.map
+
+            -- then load your mappings
+            map("n", "<leader>oi", "<cmd> :Telescope buffers <CR>")
+            map("n", "<leader>of", "<cmd> :Telescope find_files <CR>")
+            map("n", "<leader>ogc", "<cmd> :Telescope git_commits <CR>")
+            map("n", "<leader>ogs", "<cmd> :Telescope git_status <CR>")
+            map("n", "<leader>oh", "<cmd> :Telescope help_tags <CR>")
+            map("n", "<leader>o/", "<cmd> :Telescope live_grep <CR>")
+            map("n", "<leader>ou", "<cmd> :Telescope oldfiles <CR>")
+            map("n", "<leader>oth", "<cmd> :Telescope themes <CR>")
+            map("n", "<leader>otk", "<cmd> :Telescope keymaps <CR>")
+            map("n", "<leader>fb", "<cmd> :Telescope buffers <CR>")
+
+           -- pick a hidden term
+           map("n", "<leader>W", "<cmd> :Telescope terms <CR>")
         end,
     },
     ["kyazdani42/nvim-tree.lua"] = {
@@ -37,12 +39,71 @@ return {
     },
     ["neovim/nvim-lspconfig"] = {
         setup = function()
-            require("core.mappings").lspconfig()
-            local map = nvchad.map
-            map("n", "<leader>ll", function()
-                vim.diagnostic.setloclist()
+          local map = nvchad.map
+            map("n", "gD", function()
+              vim.lsp.buf.declaration()
             end)
-        end,
+
+            map("n", "gd", function()
+            vim.lsp.buf.definition()
+            end)
+
+            map("n", "K", function()
+            vim.lsp.buf.hover()
+            end)
+
+            map("n", "gi", function()
+            vim.lsp.buf.implementation()
+            end)
+
+            map("n", "<leader>l", function()
+            vim.lsp.buf.signature_help()
+            end)
+
+            map("n", "<leader>D", function()
+            vim.lsp.buf.type_definition()
+            end)
+
+            map("n", "<leader>ra", function()
+            vim.lsp.buf.rename()
+            end)
+
+            map("n", "<leader>ca", function()
+            vim.lsp.buf.code_action()
+            end)
+
+            map("n", "gr", function()
+            vim.lsp.buf.references()
+            end)
+
+            map("n", "<leader>f", function()
+            vim.diagnostic.open_float()
+            end)
+
+            map("n", "<C-Up>", function()
+            vim.diagnostic.goto_prev()
+            end)
+
+            map("n", "<C-Down>", function()
+            vim.diagnostic.goto_next()
+            end)
+
+            map("n", "<leader>fd", function()
+            vim.lsp.buf.formatting()
+            end)
+
+            map("n", "<leader>wa", function()
+            vim.lsp.buf.add_workspace_folder()
+            end)
+
+            map("n", "<leader>wr", function()
+            vim.lsp.buf.remove_workspace_folder()
+            end)
+
+            map("n", "<leader>wl", function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+            end)
+          end,
     },
     ["akinsho/bufferline.nvim"] = {
         setup = function()
@@ -54,8 +115,8 @@ return {
     },
     -- -- -- -- -- --
     -- -- -- -- -- --
-	["easymotion/vim-easymotion"] = {
-		event = "BufRead",
+    ["easymotion/vim-easymotion"] = {
+        event = "BufRead",
         config = function()
             vim.cmd([[
             let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -75,12 +136,12 @@ return {
             map <Leader>k <Plug>(easymotion-k)
             ]])
         end,
-	},
-	["mbbill/undotree"] = {
-		after = "vim-easymotion",
-	},
-	["junegunn/vim-easy-align"] = {
-		after = "vim-easymotion",
+    },
+    ["mbbill/undotree"] = {
+        after = "vim-easymotion",
+    },
+    ["junegunn/vim-easy-align"] = {
+        after = "vim-easymotion",
         config = function()
             vim.cmd([[
             " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -90,26 +151,26 @@ return {
             nmap ga <Plug>(EasyAlign)
             ]])
         end,
-	},
-	["tpope/vim-surround"] = {
-		after = "vim-easymotion",
-		-- cs"'  ->  change " to '
-		-- ds"   ->  remove "
-		-- ysiw( ->  wrap word with ()
-		-- yss(  ->  wrap line with ()
-	},
-	["nvim-orgmode/orgmode"] = {
-		after = "vim-easymotion",
-		config = function()
-			require("custom.plugins.orgmode")
-		end,
-	},
-	["luukvbaal/stabilize.nvim"] = {
-		config = function() require("stabilize").setup() end
-	},
-	["ctrlpvim/ctrlp.vim"] = {
-		after = "vim-easymotion",
-        config = function() 
+    },
+    ["tpope/vim-surround"] = {
+        after = "vim-easymotion",
+        -- cs"'  ->  change " to '
+        -- ds"   ->  remove "
+        -- ysiw( ->  wrap word with ()
+        -- yss(  ->  wrap line with ()
+    },
+    ["nvim-orgmode/orgmode"] = {
+        after = "vim-easymotion",
+        config = function()
+            require("custom.plugins.orgmode")
+        end,
+    },
+    ["luukvbaal/stabilize.nvim"] = {
+        config = function() require("stabilize").setup() end
+    },
+    ["ctrlpvim/ctrlp.vim"] = {
+        after = "vim-easymotion",
+        config = function()
             vim.cmd([[
         	" CtrlP config
             let g:ctrlp_map = '<leader>pp'
@@ -126,15 +187,15 @@ return {
             nnoremap <silent> <leader>pu :CtrlPMRU<CR>
             ]])
         end,
-	},
-	["liuchengxu/vista.vim"] = {
-		after = "vim-easymotion",
-	},
-	["tpope/vim-fugitive"] = {
-		after = "vim-easymotion",
-	},
+    },
+    ["liuchengxu/vista.vim"] = {
+        after = "vim-easymotion",
+    },
+    ["tpope/vim-fugitive"] = {
+        after = "vim-easymotion",
+    },
     ["sakhnik/nvim-gdb"] = {
-		after = "vim-easymotion",
+        after = "vim-easymotion",
         config = function()
             local map = nvchad.map
             map("n", "<leader>bbt", "<cmd> :GdbBreakpointToggle <CR>")
@@ -147,6 +208,31 @@ return {
             map("n", "<leader>bbP", "<cmd> :GdbFrameDown <CR>")
         end,
     },
+    ["mhartington/formatter.nvim"] = {
+        after = "vim-easymotion",
+        config = function()
+            local util = require "formatter.util"
 
-  
+            -- Provides the Format and FormatWrite commands
+            require('formatter').setup {
+                -- All formatter configurations are opt-in
+                filetype = {
+                    lua = {
+                        require('formatter.filetypes.lua').stylua,
+                    },
+                    cpp = {
+                        require('formatter.filetypes.cpp').clangformat,
+                    },
+                    cs = {
+                        require('formatter.filetypes.cs').dotnetformat,
+                    },
+                    python = {
+                        require('formatter.filetypes.python').black,
+                    },
+                }
+            }
+            local map = nvchad.map
+            map("n", "<leader>fm", "<cmd> :Format<CR>")
+        end,
+    },
 }

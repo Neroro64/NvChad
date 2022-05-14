@@ -3,14 +3,14 @@
 local M = {}
 local userPlugins = require "custom.plugins"
 
-M.ui = {
-   hl_override = {},
-   changed_themes = {},
-   colors = {}, -- dynamically generated, never edit this in chadrc
-   theme_toggle = { "onedark", "one_light" },
-   theme = "rxyhn", -- default theme
-   transparency = false,
-}
+-- M.ui = {
+--    hl_override = {},
+--    changed_themes = {},
+--    colors = {}, -- dynamically generated, never edit this in chadrc
+--    theme_toggle = { "onedark", "one_light" },
+--    theme = "gruvchad", -- default theme
+--    transparency = false,
+-- }
 
 M.plugins = {
    user = userPlugins,
