@@ -24,17 +24,6 @@ local options = {
       close_on_exit = true,
       auto_insert = true,
    },
-   mappings = {
-      toggle = {
-         float = "<leader>mf",
-         horizontal = "<leader>mh",
-         vertical = "<leader>mv",
-      },
-      new = {
-         horizontal = "<leader>h",
-         vertical = "<leader>v",
-      },
-   },
    enable_new_mappings = true,
 }
 

@@ -29,6 +29,16 @@ local plugins = {
    ["NvChad/nvterm"] = {
       config = function()
          require "plugins.configs.nvterm"
+          local map = nvchad.map
+          map("n", "<leader>mf", function ()
+            require("nvterm.terminal").toggle "float"
+          end)
+          map("n", "<leader>mh", function ()
+            require("nvterm.terminal").toggle "horizontal"
+          end)
+          map("n", "<leader>mv", function ()
+            require("nvterm.terminal").toggle "vertical"
+          end)
       end,
    },
 
@@ -74,7 +84,7 @@ local plugins = {
 
    ["nvim-treesitter/nvim-treesitter"] = {
       event = { "BufRead", "BufNewFile" },
-      run = ":TSUpdate",
+      run = ":TSUpdateSync",
       config = function()
          require "plugins.configs.treesitter"
       end,

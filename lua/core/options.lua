@@ -5,11 +5,12 @@ local g = vim.g
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 g.toggle_theme_icon = "   "
+g.nvchad_theme = nvchad.load_config().ui.theme
 
 opt.confirm = true
 opt.laststatus = 3 -- global statusline
 opt.title = true
-opt.clipboard = "unnamedplus"
+opt.clipboard = ""
 opt.cmdheight = 1
 opt.cul = true -- cursor line
 
