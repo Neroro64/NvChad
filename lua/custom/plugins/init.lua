@@ -138,7 +138,9 @@ return {
         end,
     },
     ["mbbill/undotree"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "undotree"
+        end,
     },
     ["junegunn/vim-easy-align"] = {
         after = "vim-easymotion",
@@ -160,7 +162,9 @@ return {
         -- yss(  ->  wrap line with ()
     },
     ["nvim-orgmode/orgmode"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "orgmode"
+        end,
         config = function()
             require("custom.plugins.orgmode")
         end,
@@ -169,7 +173,9 @@ return {
         config = function() require("stabilize").setup() end
     },
     ["ctrlpvim/ctrlp.vim"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "ctrlp.vim"
+        end,
         config = function()
             vim.cmd([[
         	" CtrlP config
@@ -189,13 +195,19 @@ return {
         end,
     },
     ["liuchengxu/vista.vim"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "vista.vim"
+        end,
     },
     ["tpope/vim-fugitive"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "vim-fugitive"
+        end,
     },
     ["sakhnik/nvim-gdb"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "nvim-gdb"
+        end,
         config = function()
             local map = nvchad.map
             map("n", "<leader>bbt", "<cmd> :GdbBreakpointToggle <CR>")
@@ -209,7 +221,9 @@ return {
         end,
     },
     ["mhartington/formatter.nvim"] = {
-        after = "vim-easymotion",
+        setup = function()
+           nvchad.packer_lazy_load "formatter.nvim"
+        end,
         config = function()
             local util = require "formatter.util"
 

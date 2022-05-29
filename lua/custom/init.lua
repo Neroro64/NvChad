@@ -14,7 +14,13 @@ vim.opt.ffs = { 'unix', 'dos', 'mac' } --  Use Unix as the standard file type
 -- Custom mappings
 local map = nvchad.map
 map('n', 'vA', 'ggVG') -- Select all text
+
 map("n", "<C-a>c", "<cmd> :%y+ <CR>") -- copy whole file content
+map("n", "<Leader>y", '"+y') -- copy whole file content
+map("n", "<Leader>v", '"+p') -- copy whole file content
+map("v", "<Leader>y", '"+y') -- copy whole file content
+map("v", "<Leader>v", '"+p') -- copy whole file content
+
 map("n", "<leader>tb", "<cmd> :enew <CR>") -- new buffer
 map("n", "<leader>tt", "<cmd> :tabnew <CR>") -- new tabs
 map("n", "<leader>w", "<cmd> :w <CR>") -- ctrl + s to save file
