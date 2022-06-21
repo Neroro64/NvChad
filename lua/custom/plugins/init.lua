@@ -249,4 +249,14 @@ return {
             map("n", "<leader>fm", "<cmd> :Format<CR>")
         end,
     },
+    ["rmagatti/auto-session"] = {
+        config = function()
+          require('auto-session').setup {
+            log_level = 'info',
+            auto_session_suppress_dirs = {'~/', '~/Projects'}
+          }
+        end,
+    },
+    ["morhetz/gruvbox"] = {},
+    ["rafi/awesome-vim-colorschemes"] = {},
 }
