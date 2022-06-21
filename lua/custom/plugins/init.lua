@@ -257,6 +257,6 @@ return {
           }
         end,
     },
-    ["morhetz/gruvbox"] = {},
     ["rafi/awesome-vim-colorschemes"] = {},
+    ["puremourning/vimspector"] = {},
 }

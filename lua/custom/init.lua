@@ -128,5 +128,12 @@ vim.cmd([[
 	\ }
 	nnoremap <silent> <leader>po :CtrlP %:p:h<cr>
 	nnoremap <silent> <leader>pu :CtrlPMRU<CR>
+
+  " VimSpector
+    let g:vimspector_enable_mappings = 'HUMAN'
+    nmap <Leader>di <Plug>VimspectorBalloonEval
+    " for visual mode, the visually selected text
+    xmap <Leader>di <Plug>VimspectorBalloonEval
+
   colorscheme PaperColor
 ]])
