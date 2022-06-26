@@ -8,7 +8,7 @@ local userPlugins = require "custom.plugins"
 --    changed_themes = {},
 --    colors = {}, -- dynamically generated, never edit this in chadrc
 --    theme_toggle = { "onedark", "one_light" },
---    theme = "gruvchad", -- default theme
+--    theme = "one_light", -- default theme
 --    transparency = false,
 -- }
 

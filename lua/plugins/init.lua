@@ -15,18 +15,20 @@ local plugins = {
 
    ["NvChad/extensions"] = {},
 
-   ["NvChad/base46"] = {
-      after = "packer.nvim",
-      config = function()
-         local ok, base46 = pcall(require, "base46")
-
-         if ok then
-            base46.load_theme()
-         end
-      end,
-   },
+   -- ["NvChad/base46"] = {
+   --    after = "packer.nvim",
+   --    commit = "168e5b08e730c0c98b9d9d1a02ff2df5c709edfe", -- 2022-05-22
+   --    config = function()
+   --       local ok, base46 = pcall(require, "base46")
+   --
+   --       if ok then
+   --          base46.load_theme()
+   --       end
+   --    end,
+   -- },
 
    ["NvChad/nvterm"] = {
+      commit = "bfef0fdbd06b7bcbee0f4cdf4a8078bc4e27a23c", -- 2022-05-14
       config = function()
          require "plugins.configs.nvterm"
           local map = nvchad.map
@@ -43,7 +45,7 @@ local plugins = {
    },
 
    ["kyazdani42/nvim-web-devicons"] = {
-      after = "base46",
+      after = "packer.nvim",
       config = function()
          require "plugins.configs.icons"
       end,
