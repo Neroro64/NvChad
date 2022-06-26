@@ -61,7 +61,7 @@ map('n', "<leader>pc", ":!p4 edit %:p -c ")
 map('n', "<leader>pr", ":!p4 revert %:p <cr>")
 
 -- Tag bar
-map('n', "<F9>", ":Vista<CR>")
+-- map('n', "<F9>", ":Vista<CR>")
 -- Undotree
 map('n', "<Leader>U", ":UndotreeToggle<CR>")
 
@@ -136,4 +136,5 @@ vim.cmd([[
     xmap <Leader>di <Plug>VimspectorBalloonEval
 
   colorscheme PaperColor
+  set background=light
 ]])
