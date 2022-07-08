@@ -77,8 +77,8 @@ end
 
 vim.cmd([[
   " Remap diffnext and diffprev
-  nnoremap <expr> <C-J> ']c'
-  nnoremap <expr> <C-K> '[c'
+  nnoremap <expr> <C-h> &diff ? ']c' : '<C-W>h'
+  nnoremap <expr> <C-j> &diff ? '[c' : '<C-W>j'
 
   " Copy current file path to clipboard
   nnoremap <leader>% :call CopyCurrentFilePath()<CR>

@@ -230,7 +230,7 @@ return {
         end,
         config = function()
           local map = nvchad.map
-          map('n', "<F9>", ":SymbolsOutline<CR>")
+          map('n', "<F2>", ":SymbolsOutline<CR>")
         end,
     },
     ["rafi/awesome-vim-colorschemes"] = {},
