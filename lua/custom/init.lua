@@ -136,5 +136,5 @@ vim.cmd([[
     xmap <Leader>di <Plug>VimspectorBalloonEval
 
   colorscheme PaperColor
-  set background=light
+  set background=dark
 ]])
