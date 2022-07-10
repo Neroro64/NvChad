@@ -61,7 +61,7 @@ map('n', "<leader>pc", ":!p4 edit %:p -c ")
 map('n', "<leader>pr", ":!p4 revert %:p <cr>")
 
 -- Tag bar
-map('n', "<F9>", ":Vista<CR>")
+-- map('n', "<F9>", ":Vista<CR>")
 -- Undotree
 map('n', "<Leader>U", ":UndotreeToggle<CR>")
 
@@ -77,8 +77,8 @@ end
 
 vim.cmd([[
   " Remap diffnext and diffprev
-  nnoremap <expr> <C-J> ']c'
-  nnoremap <expr> <C-K> '[c'
+  nnoremap <expr> <C-h> &diff ? ']c' : '<C-W>h'
+  nnoremap <expr> <C-j> &diff ? '[c' : '<C-W>j'
 
   " Copy current file path to clipboard
   nnoremap <leader>% :call CopyCurrentFilePath()<CR>
@@ -136,4 +136,5 @@ vim.cmd([[
     xmap <Leader>di <Plug>VimspectorBalloonEval
 
   colorscheme PaperColor
+  set background=light
 ]])

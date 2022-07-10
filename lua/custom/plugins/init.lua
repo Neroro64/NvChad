@@ -43,11 +43,9 @@ return {
             map("n", "gD", function()
               vim.lsp.buf.declaration()
             end)
-
             map("n", "gd", function()
-            vim.lsp.buf.definition()
+              vim.lsp.buf.definition()
             end)
-
             map("n", "K", function()
             vim.lsp.buf.hover()
             end)
@@ -194,30 +192,9 @@ return {
             ]])
         end,
     },
-    ["liuchengxu/vista.vim"] = {
-        setup = function()
-           nvchad.packer_lazy_load "vista.vim"
-        end,
-    },
     ["tpope/vim-fugitive"] = {
         setup = function()
            nvchad.packer_lazy_load "vim-fugitive"
-        end,
-    },
-    ["sakhnik/nvim-gdb"] = {
-        setup = function()
-           nvchad.packer_lazy_load "nvim-gdb"
-        end,
-        config = function()
-            local map = nvchad.map
-            map("n", "<leader>bbt", "<cmd> :GdbBreakpointToggle <CR>")
-            map("n", "<leader>bbu", "<cmd> :GdbUntil <CR>")
-            map("n", "<leader>bbc", "<cmd> :GdbContinue <CR>")
-            map("n", "<leader>bbn", "<cmd> :GdbNext <CR>")
-            map("n", "<leader>bbs", "<cmd> :GdbStep <CR>")
-            map("n", "<leader>bbf", "<cmd> :GdbFinish <CR>")
-            map("n", "<leader>bbp", "<cmd> :GdbFrameUp <CR>")
-            map("n", "<leader>bbP", "<cmd> :GdbFrameDown <CR>")
         end,
     },
     ["mhartington/formatter.nvim"] = {
@@ -225,8 +202,6 @@ return {
            nvchad.packer_lazy_load "formatter.nvim"
         end,
         config = function()
-            local util = require "formatter.util"
-
             -- Provides the Format and FormatWrite commands
             require('formatter').setup {
                 -- All formatter configurations are opt-in
@@ -249,14 +224,20 @@ return {
             map("n", "<leader>fm", "<cmd> :Format<CR>")
         end,
     },
-    ["rmagatti/auto-session"] = {
+    ["simrat39/symbols-outline.nvim"] = {
+        setup = function()
+           nvchad.packer_lazy_load "symbols-outline.nvim"
+        end,
         config = function()
-          require('auto-session').setup {
-            log_level = 'info',
-            auto_session_suppress_dirs = {'~/', '~/Projects'}
-          }
+          local map = nvchad.map
+          map('n', "<F2>", ":SymbolsOutline<CR>")
         end,
     },
     ["rafi/awesome-vim-colorschemes"] = {},
     ["puremourning/vimspector"] = {},
+    ["kkoomen/vim-doge"] = {
+        setup = function()
+           nvchad.packer_lazy_load "vim-doge"
+        end,
+    },
 }
