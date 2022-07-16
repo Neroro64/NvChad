@@ -173,9 +173,9 @@ return {
              require("custom.plugins.orgmode")
          end,
      },
-     -- ["luukvbaal/stabilize.nvim"] = {
-     --     config = function() require("stabilize").setup() end
-     -- },
+     ["luukvbaal/stabilize.nvim"] = {
+         config = function() require("stabilize").setup() end
+     },
      ["ctrlpvim/ctrlp.vim"] = {
          setup = function()
             nvchad.packer_lazy_load "ctrlp.vim"
