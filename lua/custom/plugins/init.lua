@@ -35,14 +35,6 @@ return {
              map("n", "<leader>ef", "<cmd> :NvimTreeFocus <CR>")
          end,
      },
-     ["numToStr/Comment.nvim"] = {
-         setup = function()
-             require("core.mappings").comment()
-             local map = nvchad.map
-             map("n", "<leader>cc", "<cmd> :lua require('Comment.api').toggle_current_linewise()<CR>")
-             map("v", "<leader>cc", "<esc><cmd> :lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>")
-         end,
-     },
      ["neovim/nvim-lspconfig"] = {
          setup = function()
            local map = nvchad.map
@@ -252,5 +244,55 @@ return {
          end,
      },
      ["rafi/awesome-vim-colorschemes"] = {},
-     ["puremourning/vimspector"] = {},
+     ["iamcco/markdown-preview.nvim"] = {},
+     -- ["mfussenegger/nvim-dap"] = {
+     --     setup = function()
+     --        nvchad.packer_lazy_load "nvim-dap"
+     --     end,
+     --     config = function()
+     --       local map = nvchad.map
+     --       map("n", "<F9>", ":lua require('dap').toggle_breakpoint()<CR>")
+     --       map("n", "<F5>", ":lua require('dap').continue()<CR>")
+     --       map("n", "<F10>", ":lua require('dap').step_over()<CR>")
+     --       map("n", "<F11>", ":lua require('dap').step_into()<CR>")
+     --       map("n", "<F12>", ":lua require('dap').step_out()<CR>")
+     --
+     --     end,
+     --
+     -- },
+     -- ["ravenxrz/DAPInstall.nvim"] = {
+     --     -- after = "vim-easymotion",
+     --     -- setup = function()
+     --     --    nvchad.packer_lazy_load "dap-buddy.nvim"
+     --     -- end,
+     -- },
+     -- ["rcarriga/nvim-dap-ui"] = {
+     --     after = "nvim-dap",
+     --     requires = {"mfussenegger/nvim-dap"},
+     --     config = function()
+     --       local map = nvchad.map
+     --       map("n", "<F4>", ":lua require('dapui').toggle()<CR>")
+     --       map("n", "<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>")
+     --       map("v", "<Leader>dhh", ":lua require('dap.ui.variables').visual_hover()<CR>")
+     --       map("n", "<Leader>duh", ":lua require('dap.ui.widgets').hover()<CR>")
+     --       map("n", "<Leader>duf", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>")
+     --       map("n", "<Leader>dro", ":lua local widgets=require('dap').repl.open()<CR>")
+     --       map("n", "<Leader>drl", ":lua local widgets=require('dap').repl.run_last()<CR>")
+     --       map("n", "<Leader>dbc", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+     --       map("n", "<Leader>dbm", ":lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>")
+     --       map("n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>")
+     --
+     --       map("n", "<Leader>dc", ":lua require('dap.ui.variables').scopes()<CR>")
+     --       map("n", "<Leader>di", ":lua require('dapui').toggle()<CR>")
+     --     end,
+     --
+     -- },
+     -- ["theHamsta/nvim-dap-virtual-text"] = {
+     --     after = "vim-easymotion",
+     -- },
+     ["Pocco81/true-zen.nvim"] = {
+         after = "vim-easymotion",
+     },
+
+
 }

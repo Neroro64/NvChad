@@ -76,6 +76,7 @@ if vim.fn.has('win32') == 1 then
 end
 
 vim.cmd([[
+  let g:python3_host_prog = '/opt/miniconda3/bin/python3'
   " Remap diffnext and diffprev
   nnoremap <expr> <C-h> &diff ? ']c' : '<C-W>h'
   nnoremap <expr> <C-j> &diff ? '[c' : '<C-W>j'
