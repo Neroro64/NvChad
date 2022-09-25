@@ -11,7 +11,7 @@ require("orgmode").setup_ts_grammar()
 -- }
 
 require('orgmode').setup({
-  org_agenda_files = {'~/dev/dice-log/Org/Laptop', '~/dev/dice-log/Org/**/*'},
-  org_default_notes_file = '~/dev/dice-log/Org/Laptop/refile.org',
+  org_agenda_files = {'~/org/refile.org', '~/org/**/*'},
+  org_default_notes_file = '~/org/refile.org',
   org_todo_keywords = {'TODO', '|', 'DONE'},
 })

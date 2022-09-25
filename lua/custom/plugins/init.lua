@@ -293,6 +293,7 @@ return {
      ["Pocco81/true-zen.nvim"] = {
          after = "vim-easymotion",
      },
+     ["sainnhe/everforest"] = {},
 
 
 }

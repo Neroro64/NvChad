@@ -136,6 +136,6 @@ vim.cmd([[
     " for visual mode, the visually selected text
     xmap <Leader>di <Plug>VimspectorBalloonEval
 
-  colorscheme PaperColor
+  colorscheme everforest
   set background=dark
 ]])
