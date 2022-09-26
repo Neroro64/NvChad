@@ -15,7 +15,7 @@ opt.cmdheight = 1
 opt.cul = true -- cursor line
 
 -- Indentline
-opt.expandtab = true
+opt.expandtab = false
 opt.shiftwidth = 4
 opt.smartindent = true
 
